@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Películas</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h2>Buscar películas</h2>
+    <form action="javascript:void(0);" method="GET" onsubmit="getPelículas()">
+        <input type="text" id="nombrePelícula" placeholder="Nombre">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <div id="formularioValoración">
+        <h3>Cambiar reseña</h3>
+        <form action="javascript:void(0);" onsubmit="actualizarValoración()">
+            <input type="hidden" id="edit-id">
+            <input type="hidden" id="edit-título">
+            <input type="hidden" id="edit-año">
+            <input type="hidden" id="edit-imdb">
+            <input type="hidden" id="edit-tipo">
+            <input type="text" id="edit-valoración">
+            <input type="submit" value="Cambiar">
+            <a onclick="cerrarFormulario()" aria-label="Close">&#10006;</a>
+        </form>
+        <img id="edit-poster">
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Título</th>
+            <th>Año</th>
+            <th>Valoración</th>
+            <th></th>
+        </tr>
+        <tbody id="películas"></tbody>
+    </table>
+
+    <script src="js/buscadorPelículas.js" asp-append-version="true"></script>
+    <script type="text/javascript">getPelículas();</script>
+</body>
+</html>
